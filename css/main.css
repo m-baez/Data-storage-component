@@ -1,0 +1,185 @@
+/* --- General styles --- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+}
+body {
+  background-image: url("../img/bg-mobile.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+/* --- Center app --- */
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* --- Components and logo styles --- */
+
+.components .logo {
+  grid-area: logo;
+  align-self: end;
+}
+.components .document {
+  grid-area: document;
+}
+.components .folder {
+  grid-area: folder;
+}
+.components .upload {
+  grid-area: upload;
+}
+.document,
+.folder,
+.upload {
+  background-color: #0c122c;
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.components {
+  margin-top: 130px;
+  background-color: #1d2c67;
+  border-radius: 10px 83px 10px 10px;
+  height: 200px;
+  width: 326px;
+  display: grid;
+  grid-template-columns: 30px repeat(3, 48px) auto;
+  grid-template-rows: auto;
+  grid-template-areas:
+    ". logo logo logo ."
+    ". document folder upload .";
+  grid-gap: 32px 16px;
+}
+
+/* --- Data and progress bar styles ---  */
+
+.data {
+  width: 326px;
+  height: 160px;
+  padding: 32px;
+  margin-top: 16px;
+  border-radius: 10px;
+  background-color: #1d2c67;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.bar {
+  margin-top: 14px;
+  height: 20px;
+  width: 260px;
+  padding: 3px;
+  border-radius: 10px;
+  background-color: #162352;
+}
+.bar-color {
+  width: 80%;
+  height: 14px;
+  padding: 2px;
+  border-radius: 7px;
+  background: linear-gradient(to right, #ffa399, #ff4d97);
+}
+.ball {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: flex;
+  position: relative;
+  right: -189px;
+  background-color: #ffffff;
+}
+.bar-contents {
+  margin-top: 7px;
+  width: 260px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: 300;
+}
+.data-white {
+  width: 180px;
+  font-weight: 700;
+  margin-top: 16px;
+  padding: 14px 20px;
+  border-radius: 10px;
+  color: #000000;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.data-white p:nth-of-type(1) {
+  font-size: 42px;
+}
+.data-white p:nth-of-type(2) {
+  font-size: 12px;
+  margin-left: 12px;
+  color: #848794;
+  letter-spacing: 1px;
+}
+
+/* --- Media queries DESKTOP --- */
+
+@media (min-width: 1024px) {
+  body {
+    background-color: #0c122c;
+    background-image: url("../img/bg-desktop.svg");
+    background-position-y: bottom;
+    background-repeat: no-repeat;
+    background-size: inherit;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .app {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-direction: row;
+  }
+  .components {
+    margin-top: 0px;
+    margin-right: 24px;
+  }
+  .data {
+    width: 540px;
+    align-items: initial;
+  }
+  .bar,
+  .bar-contents {
+    width: 480px;
+  }
+  .ball {
+    right: -365px;
+  }
+  .data-white {
+    position: relative;
+    padding: 12px 20px;
+    top: -165px;
+    right: -300px;
+  }
+  .data-white:after {
+    content: "";
+    position: absolute;
+    top: 50px;
+    right: 0;
+    border-style: solid;
+    border-width: 20px 20px;
+    border-color: #ffffff #ffffff transparent transparent;
+  }
+}
